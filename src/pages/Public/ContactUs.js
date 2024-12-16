@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 const ContactUs = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex-grow flex justify-center bg-gray-100 py-16 px-6">
+      <div className="flex-grow flex justify-center bg-gray-100 py-16 px-6 mt-20">
         <div className="max-w-2xl w-full bg-white p-8 rounded-lg shadow-lg">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-blue-700">Hubungi Kami</h2>

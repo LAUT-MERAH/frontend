@@ -11,6 +11,8 @@ import ArticlePage from '../pages/Public/ArticlePage';
 import ArticleReading from '../pages/Public/ArticleReading';
 import ContactUs from '../pages/Public/ContactUs';
 import AuthContext from '../context/AuthContext';
+import ForgotPassword from '../pages/Public/ForgotPassword';
+
 
 const AppRoutes = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -25,6 +27,9 @@ const AppRoutes = () => {
       <Route path="/article" element={<ArticlePage />} />
       <Route path="/articles/:id" element={<ArticleReading />} />
       <Route path="/contact" element={<ContactUs />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/register" element={<RegisterPage />} />
+
 
       <Route
         path="/dashboard"

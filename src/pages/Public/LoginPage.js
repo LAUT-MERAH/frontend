@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 
@@ -6,10 +6,19 @@ const LoginPage = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login();
-    navigate('/Hero');
+
+    try {
+      await login(email, password); 
+      navigate('/Hero'); 
+    } catch (err) {
+      setError('Gagal masuk, tolong periksa kembali identitas anda.');
+    }
   };
 
   return (
@@ -23,6 +32,10 @@ const LoginPage = () => {
         Akses informasi dan solusi terkini untuk sukses di dunia budidaya tambak. Login untuk mulai menjelajah lebih lanjut!
       </p>
 
+      {error && (
+        <div className="bg-red-200 text-red-700 p-2 rounded-md mb-4">{error}</div>
+      )}
+
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-700 text-sm font-semibold mb-2">
@@ -31,33 +44,28 @@ const LoginPage = () => {
           <input
             type="email"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Masukkan Email anda..."
             className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
         <div className="mb-4">
-          <label htmlFor="username" className="block text-gray-700 text-sm font-semibold mb-2">
-            Nama Pengguna
-          </label>
-          <input
-            type="text"
-            id="username"
-            placeholder="Masukkan nama anda..."
-            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
-
-        <div className="mb-6">
           <label htmlFor="password" className="block text-gray-700 text-sm font-semibold mb-2">
             Kata Sandi
           </label>
           <input
             type="password"
             id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="********"
             className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
+          <Link to="/forgot-password" className="text-blue-500 hover:underline">
+            Lupa kata sandi?
+          </Link>
         </div>
 
         <button
