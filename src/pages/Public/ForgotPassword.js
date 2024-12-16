@@ -5,7 +5,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     alert('Link reset password telah dikirim ke email Anda.');
   };
- //test
+ 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
       <div className="mb-6">
