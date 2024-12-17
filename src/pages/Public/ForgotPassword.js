@@ -22,7 +22,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <h1 className="text-2xl font-semibold text-gray-800">Forgot Password</h1>
+      <h1 className="text-2xl font-semibold text-gray-800">Ubah Kata Sandi</h1>
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
         <label className="block mb-4">
           Email:
@@ -35,7 +35,7 @@ const ForgotPassword = () => {
           />
         </label>
         <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg">
-          Get Reset Token
+          Dapatkan Token Ubah Kata Sandi
         </button>
         {message && <p className="text-green-500 mt-4">{message}</p>}
         {error && <p className="text-red-500 mt-4">{error}</p>}

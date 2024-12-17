@@ -8,7 +8,12 @@ import Dashboard from '../pages/Private/Dashboard';
 import ModulePage from '../pages/Private/ModulePage';
 import ModuleWatching from '../pages/Private/ModuleWatching';
 import ArticlePage from '../pages/Public/ArticlePage';
-import ArticleReading from '../pages/Public/ArticleReading';
+import ArticleReading1 from '../pages/Public/article-1';
+import ArticleReading2 from '../pages/Public/article-2';
+import ArticleReading3 from '../pages/Public/article-3';
+import ArticleReading4 from '../pages/Public/article-4';
+import ArticleReading5 from '../pages/Public/article-5';
+import ArticleReading6 from '../pages/Public/article-6';
 import ContactUs from '../pages/Public/ContactUs';
 import ForgotPassword from '../pages/Public/ForgotPassword';
 import AuthContext from '../context/AuthContext';
@@ -25,7 +30,12 @@ const AppRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/article" element={<ArticlePage />} />
-      <Route path="/articles/:id" element={<ArticleReading />} />
+      <Route path="/articles/1" element={<ArticleReading1 />} />
+      <Route path="/articles/2" element={<ArticleReading2 />} />
+      <Route path="/articles/3" element={<ArticleReading3 />} />
+      <Route path="/articles/4" element={<ArticleReading4 />} />
+      <Route path="/articles/5" element={<ArticleReading5 />} />
+      <Route path="/articles/6" element={<ArticleReading6 />} />
       <Route path="/contact" element={<ContactUs />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 

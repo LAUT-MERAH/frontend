@@ -24,10 +24,10 @@ const ArticleReading = () => {
           <div className="w-full lg:w-2/3 bg-white p-8 rounded-lg shadow-md">
             <div className="mb-4">
               <h2 className="text-3xl font-bold text-blue-700">Strategi Terbaik Dalam Perawatan Udang</h2>
-              <p className="text-gray-600 mt-2">by <span className="font-semibold text-gray-700">Nama Penulis</span> | <span>Tanggal Dibuat</span></p>
+              <p className="text-gray-600 mt-2">oleh <span className="font-semibold text-gray-700">Chrystalio</span> | <span>10 Desember 2024</span></p>
             </div>
             
-            <img src="/udang.png" alt="article-thumbnail" className="w-full h-auto rounded-lg mb-6" />
+            <img src="/article-1.jpg" alt="article-thumbnail" className="w-full h-auto rounded-lg mb-6" />
 
             <div className="text-gray-700 space-y-6 leading-relaxed">
               <h3 className="text-2xl font-semibold">Mencapai Perawatan Udang yang Optimal</h3>
