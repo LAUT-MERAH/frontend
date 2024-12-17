@@ -10,40 +10,41 @@ import ModuleWatching from '../pages/Private/ModuleWatching';
 import ArticlePage from '../pages/Public/ArticlePage';
 import ArticleReading from '../pages/Public/ArticleReading';
 import ContactUs from '../pages/Public/ContactUs';
-import AuthContext from '../context/AuthContext';
 import ForgotPassword from '../pages/Public/ForgotPassword';
-
+import AuthContext from '../context/AuthContext';
 
 const AppRoutes = () => {
   const { isAuthenticated } = useContext(AuthContext);
+  console.log('Is Authenticated:', isAuthenticated); // Debugging
 
   return (
     <Routes>
+      {/* Public Routes */}
       <Route path="/" element={isAuthenticated ? <HomepageUser /> : <HomepageGuest />} />
       <Route path="/Hero" element={isAuthenticated ? <HomepageUser /> : <HomepageGuest />} />
-
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/article" element={<ArticlePage />} />
       <Route path="/articles/:id" element={<ArticleReading />} />
       <Route path="/contact" element={<ContactUs />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/register" element={<RegisterPage />} />
 
+      {/* Protected Routes */}
+      {isAuthenticated ? (
+        <>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/module" element={<ModulePage />} />
+          <Route path="/module-watching/:moduleId" element={<ModuleWatching />} />
+        </>
+      ) : (
+        <>
+          <Route path="/dashboard" element={<Navigate to="/login" replace />} />
+          <Route path="/module" element={<Navigate to="/login" replace />} />
+          <Route path="/module-watching/:moduleId" element={<Navigate to="/login" replace />} />
+        </>
+      )}
 
-      <Route
-        path="/dashboard"
-        element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" replace />}
-      />
-      <Route
-        path="/module"
-        element={isAuthenticated ? <ModulePage /> : <Navigate to="/login" replace />}
-      />
-      <Route
-        path="/module-watching/:moduleId"
-        element={isAuthenticated ? <ModuleWatching /> : <Navigate to="/login" replace />}
-      />
-
+      {/* Catch-All Route */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

@@ -1,29 +1,27 @@
 import React, { useContext } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import HomepageUser from '../pages/Private/HomepageUser';
 import Dashboard from '../pages/Private/Dashboard';
 import ModulePage from '../pages/Private/ModulePage';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+// A wrapper for protected routes
+const PrivateRoute = () => {
   const { isAuthenticated } = useContext(AuthContext);
-
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
-      }
-    />
-  );
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
-const PrivateRoutes = () => (
-  <>
-    <PrivateRoute path="/user-home" component={HomepageUser} />
-    <PrivateRoute path="/dashboard" component={Dashboard} />
-    <PrivateRoute path="/modules" component={ModulePage} />
-  </>
-);
+// Define Private Routes
+const PrivateRoutes = () => {
+  return (
+    <>
+      <Route element={<PrivateRoute />}>
+        <Route path="/user-home" element={<HomepageUser />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/modules" element={<ModulePage />} />
+      </Route>
+    </>
+  );
+};
 
 export default PrivateRoutes;

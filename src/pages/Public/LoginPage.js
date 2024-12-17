@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 
@@ -8,16 +8,17 @@ const LoginPage = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await login(email, password); 
-      navigate('/Hero'); 
+      await login(email, password); // Updates AuthContext state
+      navigate('/'); // Redirect to homepage immediately after login
     } catch (err) {
-      setError('Gagal masuk, tolong periksa kembali identitas anda.');
+      console.error('Login error:', err.response?.data?.message || err.message);
+      setError(err.response?.data?.message || 'Gagal masuk, periksa kembali identitas Anda!');
     }
   };
 
