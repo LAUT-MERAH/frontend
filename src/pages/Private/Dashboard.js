@@ -47,6 +47,11 @@ const Dashboard = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+    // Scroll to top when component is mounted
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    
   const renderModules = (type) => {
     if (type === 'saved') {
       return (
