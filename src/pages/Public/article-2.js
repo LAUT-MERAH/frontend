@@ -54,29 +54,29 @@ const ArticleReading = () => {
 
           <aside className="hidden lg:block w-1/3 ml-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-gray-700 mb-4">Artikel Terkait</h3>
+              <h3 className="text-xl font-bold text-gray-700 mb-4">Artikel Terbaru</h3>
               <div className="space-y-4">
-                <Link to="/articles/2" className="flex items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
-                  <img src="/hero2.png" alt="related-thumbnail" className="w-12 h-12 rounded mr-4" />
+                <Link to="/articles/1" className="flex items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
+                  <img src="/article-1.jpg" alt="related-thumbnail" className="w-12 h-12 rounded mr-4" />
                   <div>
-                    <h4 className="text-blue-600 font-semibold">Tips Perawatan Kolam</h4>
-                    <p className="text-gray-500 text-sm">Pendekatan terbaik untuk menjaga kualitas air kolam...</p>
+                    <h4 className="text-blue-600 font-semibold">Strategi Terbaik Dalam Perawatan Udang</h4>
+                    <p className="text-gray-500 text-sm">Perawatan udang yang optimal mencakup serangkaian langkah strategis,...</p>
                   </div>
                 </Link>
 
                 <Link to="/articles/3" className="flex items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
-                  <img src="/hero3.png" alt="related-thumbnail" className="w-12 h-12 rounded mr-4" />
+                  <img src="/article-3.jpg" alt="related-thumbnail" className="w-12 h-12 rounded mr-4" />
                   <div>
-                    <h4 className="text-blue-600 font-semibold">Penggunaan Teknologi Perikanan</h4>
-                    <p className="text-gray-500 text-sm">Inovasi terbaru dalam teknologi untuk perikanan yang efisien...</p>
+                    <h4 className="text-blue-600 font-semibold">Mengatasi Tantangan Tambak Air Tawar: Solusi untuk Budidaya Air Tawar yang Sukses</h4>
+                    <p className="text-gray-500 text-sm">Budidaya tambak air tawar memang tidak lepas dari berbagai tantangan. Fluktuasi kualitas...</p>
                   </div>
                 </Link>
 
                 <Link to="/articles/4" className="flex items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
-                  <img src="/hero4.png" alt="related-thumbnail" className="w-12 h-12 rounded mr-4" />
+                  <img src="/article-4.jpg" alt="related-thumbnail" className="w-12 h-12 rounded mr-4" />
                   <div>
-                    <h4 className="text-blue-600 font-semibold">Penggunaan Teknologi Tambak</h4>
-                    <p className="text-gray-500 text-sm">Teknologi tambak yang mumpuni membuat petambak sangat terbantu...</p>
+                    <h4 className="text-blue-600 font-semibold">Meningkatkan Pendapatan melalui Diversifikasi Usaha Tambak</h4>
+                    <p className="text-gray-500 text-sm">Diversifikasi usaha tambak merupakan strategi yang efektif untuk meningkatkan pendapatan...</p>
                   </div>
                 </Link>
                 <Link to="/article" className="text-blue-600 font-semibold mt-2 block">Baca Selengkapnya →</Link>
