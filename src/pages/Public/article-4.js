@@ -19,9 +19,9 @@ const ArticleReading = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex justify-center bg-gray-100 py-10 px-4 flex-grow">
-        <div className="flex max-w-7xl w-full">
-          <div className="w-full lg:w-2/3 bg-white p-8 rounded-lg shadow-md">
+  <div className="flex justify-center bg-gray-100 py-10 px-4 flex-grow mt-20">
+    <div className="flex max-w-7xl w-full">
+      <div className="w-full lg:w-2/3 bg-white p-8 rounded-lg shadow-md">
             <div className="mb-4">
               <h2 className="text-3xl font-bold text-blue-700">Meningkatkan Pendapatan melalui Diversifikasi Usaha Tambak</h2>
               <p className="text-gray-600 mt-2">oleh <span className="font-semibold text-gray-700">Skina Adonai </span> | <span>6 Desember 2024</span></p>
