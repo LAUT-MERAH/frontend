@@ -45,6 +45,7 @@ const AppRoutes = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/module" element={<ModulePage />} />
           <Route path="/module-watching/:moduleId" element={<ModuleWatching />} />
+
         </>
       ) : (
         <>
